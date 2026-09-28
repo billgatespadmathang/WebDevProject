@@ -37,14 +37,33 @@ function FloatCard({ product, className }) {
   );
 }
 
-function CategoryChip({ label, category, gradient, className }) {
+// Kotak kategori berisi foto produk + label; lapisan gelap agar label tetap terbaca di atas foto
+function CategoryChip({ label, category, product, className }) {
+  if (!product) return null;
   return (
     <Link
       to={catalogLink({ kategori: category })}
-      className={`tk-float-card absolute flex items-center justify-center rounded-2xl shadow-[0_14px_26px_rgba(21,19,15,0.14)] ${className}`}
-      style={{ background: gradient }}
+      className={`tk-float-card group absolute block overflow-hidden rounded-2xl shadow-[0_14px_26px_rgba(21,19,15,0.14)] ${className}`}
     >
-      <span className="font-display text-[13px] font-extrabold text-ivory">{label}</span>
+      <ProductThumb product={product} className="h-full w-full transition-transform duration-300 group-hover:scale-110" iconSize={28} />
+      <span className="absolute inset-0 flex items-end justify-center bg-gradient-to-t from-ink/75 via-ink/15 to-transparent pb-2.5">
+        <span className="font-display text-[12px] font-extrabold text-ivory sm:text-[13px]">{label}</span>
+      </span>
+    </Link>
+  );
+}
+
+// Bentuk dekoratif (lengkung, bulat, kotak) yang diisi foto produk; klik -> cari produk itu di katalog
+function PhotoShape({ product, className }) {
+  if (!product) return null;
+  return (
+    <Link
+      to={catalogLink({ q: product.name })}
+      title={product.name}
+      aria-label={`Lihat ${product.name} di katalog`}
+      className={`tk-float-card group absolute hidden overflow-hidden lg:block ${className}`}
+    >
+      <ProductThumb product={product} className="h-full w-full transition-transform duration-300 group-hover:scale-110" iconSize={28} />
     </Link>
   );
 }
@@ -56,9 +75,9 @@ function Hero({ products }) {
     <section className={`${WRAP} relative h-[390px] overflow-hidden sm:h-[480px] sm:overflow-visible`}>
       {/* kiri */}
       <FloatCard product={byId(2)} className="tk-bob-a top-4 left-3 w-[112px] sm:top-[30px] sm:left-1 sm:w-[168px]" />
-      <CategoryChip label="tas kulit" category="Tas" gradient="linear-gradient(155deg,#FF4E32,#B23018)" className="tk-bob-b top-[285px] left-10 h-[76px] w-[76px] sm:top-[210px] sm:left-[150px] sm:h-[118px] sm:w-[118px]" />
-      <div className="tk-bob-c absolute top-[70px] left-[330px] hidden h-[190px] w-[150px] rounded-[100px_100px_16px_16px] bg-[linear-gradient(165deg,#DED6C4,#8A8378)] shadow-[0_16px_30px_rgba(21,19,15,0.14)] lg:block" />
-      <div className="tk-bob-d absolute top-[250px] left-[470px] hidden h-24 w-24 rounded-full bg-[radial-gradient(circle_at_32%_30%,#FF4E32,#7A2210_78%)] shadow-[0_12px_24px_rgba(21,19,15,0.18)] lg:block" />
+      <CategoryChip label="tas kulit" category="Tas" product={byId(13)} className="tk-bob-b top-[285px] left-10 h-[76px] w-[76px] sm:top-[210px] sm:left-[150px] sm:h-[118px] sm:w-[118px]" />
+      <PhotoShape product={byId(6)} className="tk-bob-c top-[70px] left-[330px] h-[190px] w-[150px] rounded-[100px_100px_16px_16px] shadow-[0_16px_30px_rgba(21,19,15,0.14)]" />
+      <PhotoShape product={byId(14)} className="tk-bob-d top-[250px] left-[470px] h-24 w-24 rounded-full shadow-[0_12px_24px_rgba(21,19,15,0.18)]" />
 
       {/* wordmark */}
       <div className="pointer-events-none absolute inset-x-0 top-[192px] text-center sm:top-[158px]">
@@ -66,9 +85,9 @@ function Hero({ products }) {
       </div>
 
       {/* kanan */}
-      <div className="tk-bob-c absolute top-[260px] right-[470px] hidden h-[148px] w-[108px] rounded-2xl bg-[linear-gradient(160deg,#2F5D50,#15130F_85%)] shadow-[0_14px_28px_rgba(21,19,15,0.16)] lg:block" />
-      <div className="tk-bob-b absolute top-[90px] right-[330px] hidden h-32 w-32 rounded-full bg-[linear-gradient(155deg,#ECE5D8,#C9C0AC)] shadow-[0_14px_26px_rgba(21,19,15,0.12)] lg:block" />
-      <CategoryChip label="sneakers" category="Sepatu" gradient="linear-gradient(155deg,#15130F,#3A362D)" className="tk-bob-d top-[295px] right-10 h-[76px] w-[76px] sm:top-[220px] sm:right-[150px] sm:h-[118px] sm:w-[118px]" />
+      <PhotoShape product={byId(4)} className="tk-bob-c top-[260px] right-[470px] h-[148px] w-[108px] rounded-2xl shadow-[0_14px_28px_rgba(21,19,15,0.16)]" />
+      <PhotoShape product={byId(10)} className="tk-bob-b top-[90px] right-[330px] h-32 w-32 rounded-full shadow-[0_14px_26px_rgba(21,19,15,0.12)]" />
+      <CategoryChip label="sneakers" category="Sepatu" product={byId(9)} className="tk-bob-d top-[295px] right-10 h-[76px] w-[76px] sm:top-[220px] sm:right-[150px] sm:h-[118px] sm:w-[118px]" />
       <FloatCard product={byId(3)} className="tk-bob-a top-6 right-3 w-[112px] sm:top-5 sm:right-1 sm:w-[180px]" />
     </section>
   );
