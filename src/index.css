@@ -64,6 +64,10 @@ body {
 .tk-word { animation: tk-word-in 0.9s cubic-bezier(0.2, 0.7, 0.3, 1) both; }
 .tk-float-card { transition: box-shadow 0.2s ease; }
 .tk-float-card:hover { box-shadow: 0 22px 40px rgba(21, 19, 15, 0.22); }
+
+/* Fade-in singkat saat produk di sebuah slot hero berganti otomatis (lihat HomePage.jsx) */
+@keyframes tk-crossfade { from { opacity: 0; } to { opacity: 1; } }
+.tk-crossfade { animation: tk-crossfade 0.6s ease both; }
 .tk-scroll { scrollbar-width: none; }
 .tk-scroll::-webkit-scrollbar { display: none; }
 

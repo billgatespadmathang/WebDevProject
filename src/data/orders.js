@@ -3,7 +3,8 @@ export const ORDER_STATUSES = ["Pending", "Dibayar", "Diproses", "Dikirim", "Sel
 
 export const SHIPPING_METHODS = ["JNE Reguler", "JNE Express", "J&T", "SiCepat"];
 
-// priceAtPurchase disimpan di item agar riwayat pesanan tidak berubah saat harga produk diubah
+// priceAtPurchase disimpan di item agar riwayat pesanan tidak berubah saat harga produk diubah.
+// productId di sini mengikuti daftar PRODUCTS terbaru di src/data/products.js.
 export const ORDERS = [
   {
     id: 1,
@@ -11,9 +12,9 @@ export const ORDERS = [
     customerId: 2,
     customerName: "Budi Santoso",
     items: [
-      { productId: 1, productName: "Kaos Polos Cotton Combed 30s", qty: 2, priceAtPurchase: 75000 },
+      { productId: 1, productName: "Hoodie Zip Rajut, Abu-abu", qty: 2, priceAtPurchase: 349000 },
     ],
-    totalAmount: 150000,
+    totalAmount: 698000,
     status: "Selesai",
     shippingMethod: "JNE Express",
     shippingAddress: "Jl. Merdeka No. 12, Bandung",
@@ -26,10 +27,10 @@ export const ORDERS = [
     customerId: 3,
     customerName: "Sinta Dewi",
     items: [
-      { productId: 5, productName: "Dress Midi Plisket, Sage", qty: 1, priceAtPurchase: 349000 },
-      { productId: 13, productName: "Tas Selempang Kulit Mini, Tan", qty: 1, priceAtPurchase: 529000 },
+      { productId: 7, productName: "Dress Satin Slip, Champagne", qty: 1, priceAtPurchase: 459000 },
+      { productId: 18, productName: "Clutch Amplop, Krem", qty: 1, priceAtPurchase: 259000 },
     ],
-    totalAmount: 878000,
+    totalAmount: 718000,
     status: "Selesai",
     shippingMethod: "SiCepat",
     shippingAddress: "Jl. Kaliurang Km 5 No. 22, Sleman, Yogyakarta",
@@ -42,10 +43,10 @@ export const ORDERS = [
     customerId: 4,
     customerName: "Rina Kartika",
     items: [
-      { productId: 9, productName: "Sneakers Kanvas Low, Putih", qty: 1, priceAtPurchase: 399000 },
-      { productId: 12, productName: "Tas Tote Kanvas, Natural", qty: 2, priceAtPurchase: 159000 },
+      { productId: 16, productName: "Sneakers Platform, Putih", qty: 1, priceAtPurchase: 429000 },
+      { productId: 9, productName: "Rok Denim A-Line, Biru", qty: 1, priceAtPurchase: 229000 },
     ],
-    totalAmount: 717000,
+    totalAmount: 658000,
     status: "Selesai",
     shippingMethod: "J&T",
     shippingAddress: "Jl. Diponegoro No. 45, Surabaya",
@@ -58,10 +59,10 @@ export const ORDERS = [
     customerId: 2,
     customerName: "Budi Santoso",
     items: [
-      { productId: 3, productName: "Jaket Denim Washed Blue", qty: 1, priceAtPurchase: 459000 },
-      { productId: 4, productName: "Celana Chino Slim Fit, Khaki", qty: 1, priceAtPurchase: 249000 },
+      { productId: 6, productName: "Jaket Puffer, Hitam", qty: 1, priceAtPurchase: 649000 },
+      { productId: 4, productName: "Celana Panjang Formal, Hitam", qty: 1, priceAtPurchase: 259000 },
     ],
-    totalAmount: 708000,
+    totalAmount: 908000,
     status: "Dikirim",
     shippingMethod: "JNE Reguler",
     shippingAddress: "Jl. Merdeka No. 12, Bandung",
@@ -74,10 +75,10 @@ export const ORDERS = [
     customerId: 5,
     customerName: "Andi Pratama",
     items: [
-      { productId: 10, productName: "Sepatu Loafers Kulit, Cokelat", qty: 1, priceAtPurchase: 689000 },
-      { productId: 15, productName: "Ikat Pinggang Kulit Classic, Hitam", qty: 1, priceAtPurchase: 179000 },
+      { productId: 15, productName: "Sepatu Oxford Formal, Cokelat", qty: 1, priceAtPurchase: 599000 },
+      { productId: 22, productName: "Kacamata Aviator", qty: 1, priceAtPurchase: 349000 },
     ],
-    totalAmount: 868000,
+    totalAmount: 948000,
     status: "Dikirim",
     shippingMethod: "JNE Express",
     shippingAddress: "Jl. Gatot Subroto Kav. 18, Jakarta Selatan",
@@ -90,10 +91,10 @@ export const ORDERS = [
     customerId: 3,
     customerName: "Sinta Dewi",
     items: [
-      { productId: 7, productName: "Cardigan Rajut Oversized, Cream", qty: 1, priceAtPurchase: 279000 },
-      { productId: 6, productName: "Blouse Satin Kerah V, Champagne", qty: 2, priceAtPurchase: 219000 },
+      { productId: 8, productName: "Blouse Lace Ruffle, Ivory", qty: 2, priceAtPurchase: 259000 },
+      { productId: 12, productName: "Rok Maxi Rajut, Hitam", qty: 1, priceAtPurchase: 249000 },
     ],
-    totalAmount: 717000,
+    totalAmount: 767000,
     status: "Diproses",
     shippingMethod: "SiCepat",
     shippingAddress: "Jl. Kaliurang Km 5 No. 22, Sleman, Yogyakarta",
@@ -106,10 +107,10 @@ export const ORDERS = [
     customerId: 6,
     customerName: "Maya Lestari",
     items: [
-      { productId: 1, productName: "Kaos Polos Cotton Combed 30s", qty: 3, priceAtPurchase: 75000 },
-      { productId: 14, productName: "Topi Bucket Corduroy, Olive", qty: 1, priceAtPurchase: 129000 },
+      { productId: 20, productName: "Anting Gantung Rumbai, Pink", qty: 1, priceAtPurchase: 129000 },
+      { productId: 24, productName: "Syal Motif Geometris", qty: 1, priceAtPurchase: 159000 },
     ],
-    totalAmount: 354000,
+    totalAmount: 288000,
     status: "Diproses",
     shippingMethod: "J&T",
     shippingAddress: "Jl. Pemuda No. 8, Semarang",
@@ -122,9 +123,9 @@ export const ORDERS = [
     customerId: 2,
     customerName: "Budi Santoso",
     items: [
-      { productId: 9, productName: "Sneakers Kanvas Low, Putih", qty: 1, priceAtPurchase: 399000 },
+      { productId: 16, productName: "Sneakers Platform, Putih", qty: 1, priceAtPurchase: 429000 },
     ],
-    totalAmount: 399000,
+    totalAmount: 429000,
     status: "Dibayar",
     shippingMethod: "JNE Express",
     shippingAddress: "Jl. Merdeka No. 12, Bandung",
@@ -137,9 +138,9 @@ export const ORDERS = [
     customerId: 4,
     customerName: "Rina Kartika",
     items: [
-      { productId: 5, productName: "Dress Midi Plisket, Sage", qty: 1, priceAtPurchase: 349000 },
+      { productId: 11, productName: "Dress Maxi Motif Tropis", qty: 1, priceAtPurchase: 389000 },
     ],
-    totalAmount: 349000,
+    totalAmount: 389000,
     status: "Dibayar",
     shippingMethod: "SiCepat",
     shippingAddress: "Jl. Diponegoro No. 45, Surabaya",
@@ -152,10 +153,10 @@ export const ORDERS = [
     customerId: 3,
     customerName: "Sinta Dewi",
     items: [
-      { productId: 12, productName: "Tas Tote Kanvas, Natural", qty: 1, priceAtPurchase: 159000 },
-      { productId: 11, productName: "Sandal Slide Strap Kulit", qty: 1, priceAtPurchase: 229000 },
+      { productId: 18, productName: "Clutch Amplop, Krem", qty: 1, priceAtPurchase: 259000 },
+      { productId: 21, productName: "Kalung Rantai Emas, Layer", qty: 1, priceAtPurchase: 179000 },
     ],
-    totalAmount: 388000,
+    totalAmount: 438000,
     status: "Pending",
     shippingMethod: "JNE Reguler",
     shippingAddress: "Jl. Kaliurang Km 5 No. 22, Sleman, Yogyakarta",
@@ -168,9 +169,9 @@ export const ORDERS = [
     customerId: 5,
     customerName: "Andi Pratama",
     items: [
-      { productId: 2, productName: "Kemeja Linen Lengan Panjang, Ivory", qty: 2, priceAtPurchase: 289000 },
+      { productId: 2, productName: "Mantel Wol Panjang, Navy", qty: 1, priceAtPurchase: 899000 },
     ],
-    totalAmount: 578000,
+    totalAmount: 899000,
     status: "Pending",
     shippingMethod: "J&T",
     shippingAddress: "Jl. Gatot Subroto Kav. 18, Jakarta Selatan",
